@@ -50,7 +50,7 @@ jobs:
       
       - name: Build Angular App 
         run: |
-         ng build --base-href=${{ steps.pages_conf.outputs.base_path }} --output-path=dist
+         ng build --base-href='./' --output-path=dist
 
       - name: Archive artifact
         shell: sh
