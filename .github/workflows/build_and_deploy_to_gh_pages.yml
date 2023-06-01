@@ -42,13 +42,17 @@ jobs:
          token: ${{secrets.GH_PAT}} # default is ${{ github.token }}
    
       - name: Install Angular
-        run: npm install @angular/cli@latest 
+        run: npm install -g @angular/cli@latest 
           
       - name: Install Dependencies 
         run: npm install
       
       - name: Build Angular App 
-        run: | 
+        run: |
+         node -v
+         npm -v
+         ng version
+         npm install 
          ng build --outputPath=${{ steps.pages_conf.outputs.base_path }}
 
       - name: Archive artifact
