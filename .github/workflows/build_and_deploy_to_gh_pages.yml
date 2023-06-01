@@ -50,10 +50,7 @@ jobs:
       
       - name: Build Angular App 
         run: |
-         ng build --output-path=${{ steps.pages_conf.outputs.base_path }}
-         permissions:
-          pages: write
-          id-token: write
+         ng build --base-href=${{ steps.pages_conf.outputs.base_path }} --output-path=dist
 
       - name: Archive artifact
         shell: sh
